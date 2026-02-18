@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Sugarplum ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, black, #1a0000);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Main Heading */
+h1 {
+    color: red;
+    margin-top: 50px;
+    font-size: 40px;
+    text-shadow: 0 0 15px red;
+}
+
+p {
+    font-size: 20px;
+    padding: 0 20px;
+}
+
+/* Romantic Button */
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 0 15px red;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: black;
+    box-shadow: 0 0 25px red;
+}
+
+/* Hidden Message */
+#hiddenMessage {
+    display: none;
+    margin-top: 20px;
+    font-size: 22px;
+    color: pink;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: red;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday My Sugarplum ❤️</h1>
+
+<p>
+This is our first birthday together…  
+and already you mean more to me than you know.  
+Thank you for loving me the way you do.
+</p>
+
+<p>
+You walked into my life just one month ago,  
+and somehow made it brighter, warmer, and softer.  
+I’m so lucky you’re mine.
+I loveee you so muchhh 
+</p>
+
+<button onclick="showMessage()">Click if you love me ❤️</button>
+
+<div id="hiddenMessage">
+    Surpriseeee 🥺💖  
+    No matter where we are,  
+    I’m always choosing you.  
+    Happy Birthday my favorite person ❤️
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("hiddenMessage").style.display = "block";
+}
+
+/* Create Floating Hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
